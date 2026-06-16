@@ -62,6 +62,19 @@ h1, h2, h3, h4 {
 .section { padding: 5.5rem 0; }
 .section + .section { border-top: 1px solid var(--border); }
 
+/* ── Optional subtle background texture ──────────────────────
+   A barely-there dot grid. Add class "textured" to <body> to
+   enable it site-wide; remove it for a perfectly clean look.   */
+body.textured {
+  background-image: radial-gradient(var(--border) 0.9px, transparent 0.9px);
+  background-size: 22px 22px;
+  background-attachment: fixed;
+}
+/* keep solid-color sections opaque so the texture only shows on white */
+body.textured .hero,
+body.textured .stats-strip,
+body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
+
 /* ── NAV ─────────────────────────────────────────────────── */
 .site-nav {
   position: sticky;
@@ -107,13 +120,29 @@ h1, h2, h3, h4 {
   font-weight: 500;
   color: var(--gray);
   text-decoration: none;
-  padding-bottom: 3px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.18s ease, border-color 0.18s ease;
+  padding-bottom: 4px;
+  position: relative;
+  transition: color 0.18s ease;
 }
 
+/* colourful gradient underline that wipes in on hover / active */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .nav-links a:hover  { color: var(--black); }
-.nav-links a.active { color: var(--black); border-bottom-color: var(--black); }
+.nav-links a:hover::after  { transform: scaleX(1); opacity: 0.55; }
+.nav-links a.active { color: var(--black); }
+.nav-links a.active::after { transform: scaleX(1); opacity: 1; }
 
 /* hamburger */
 .nav-toggle {
@@ -260,11 +289,24 @@ h1, h2, h3, h4 {
 .btn:hover { transform: translateY(-2px); }
 
 .btn-dark {
-  background: var(--black);
   color: var(--white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  background-color: var(--black);
+  /* teal "cover" that fills in from the left on hover */
+  background-image: linear-gradient(var(--teal), var(--teal));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-size 0.3s ease, box-shadow 0.25s ease, transform 0.18s;
 }
-.btn-dark:hover { background: #222; box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
+.btn-dark:hover {
+  background-size: 100% 100%;
+  box-shadow: 0 8px 22px rgba(13, 148, 136, 0.28);
+}
+.btn-dark:active {
+  /* darker solid on click */
+  background-image: linear-gradient(var(--teal-dk), var(--teal-dk));
+}
 
 .btn-ghost {
   background: transparent;
@@ -272,6 +314,40 @@ h1, h2, h3, h4 {
   border: 1.5px solid var(--border);
 }
 .btn-ghost:hover { border-color: var(--black); }
+
+/* subtle sheen that sweeps across buttons on hover */
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.btn:hover::before { left: 130%; }
+/* ghost button has a light bg, so use a teal-tinted sweep instead of white */
+.btn-ghost::before {
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(13, 148, 136, 0.12),
+    transparent
+  );
+}
 
 /* ── Stats strip (home) ──────────────────────────────────── */
 .stats-strip {
@@ -382,6 +458,40 @@ h1, h2, h3, h4 {
   color: var(--c, var(--teal));
 }
 .service-card .svc-list li::before { content: '→ '; opacity: 0.6; }
+
+/* animated accent squares clustered by the icon (injected by main.js) */
+.svc-squares {
+  position: absolute;
+  top: 2.25rem;
+  right: 2.25rem;
+  width: 27px;
+  height: 27px;
+  pointer-events: none;
+  z-index: 2;
+}
+.svc-squares span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--c, var(--teal));
+  opacity: 0.20;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+}
+.svc-squares span:nth-child(1) { top: 0;    left: 0; }
+.svc-squares span:nth-child(2) { top: 0;    left: 15px; }
+.svc-squares span:nth-child(3) { top: 15px; left: 0; }
+.svc-squares span:nth-child(4) { top: 15px; left: 15px; }
+
+/* on hover the cluster scatters and brightens */
+.service-card:hover .svc-squares span { opacity: 0.9; }
+.service-card:hover .svc-squares span:nth-child(1) { transform: translate(-7px, -7px) rotate(-18deg); }
+.service-card:hover .svc-squares span:nth-child(2) { transform: translate(7px, -5px) rotate(14deg);  transition-delay: 0.04s; }
+.service-card:hover .svc-squares span:nth-child(3) { transform: translate(-5px, 7px) rotate(12deg);  transition-delay: 0.08s; }
+.service-card:hover .svc-squares span:nth-child(4) { transform: translate(7px, 7px) rotate(-12deg);  transition-delay: 0.12s; }
+
+/* keep card content above the decorative layer */
+.service-card > *:not(.svc-squares) { position: relative; z-index: 1; }
 
 /* ── WORK page ───────────────────────────────────────────── */
 .work-list { margin-top: 1rem; }

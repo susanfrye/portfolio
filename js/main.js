@@ -36,3 +36,15 @@ if (toggle) {
     toggle.classList.toggle('open');
   });
 }
+
+// ── Animated accent squares by the service-card icon ──────
+// Injected here (not in markup) so every card stays clean and DRY.
+// A 2×2 cluster sits in the top-right; on hover it scatters & brightens.
+document.querySelectorAll('.service-card').forEach(card => {
+  const layer = document.createElement('div');
+  layer.className = 'svc-squares';
+  for (let i = 0; i < 4; i++) {
+    layer.appendChild(document.createElement('span'));
+  }
+  card.appendChild(layer);
+});
