@@ -1,0 +1,12 @@
+# R / Shiny artifacts (these live with the app code, not the website)
+*.rds
+cache_*.rds
+deploy_*/
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# OS junk
+.DS_Store
+Thumbs.db

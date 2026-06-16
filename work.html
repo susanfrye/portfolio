@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Susan Frye</title>
+  <meta name="description" content="Interactive R/Shiny dashboards built on real ecological open data — species at risk, breeding bird trends, urban forest, and biodiversity phenology." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Work-page-specific: app embed ─────────────────────── */
+    .app-embed {
+      margin-top: 1.5rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--light);
+    }
+    .app-embed-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1rem;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .app-embed-bar .dot {
+      width: 11px; height: 11px; border-radius: 50%;
+    }
+    .app-embed-bar .dot.r { background: #ff5f57; }
+    .app-embed-bar .dot.y { background: #febc2e; }
+    .app-embed-bar .dot.g { background: #28c840; }
+    .app-embed-bar .url {
+      margin-left: 0.75rem;
+      font-family: var(--font-h);
+      font-size: 0.78rem;
+      color: var(--gray);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .app-embed iframe {
+      width: 100%;
+      height: 640px;
+      border: none;
+      display: block;
+      background: #fff;
+    }
+    /* Placeholder shown until a shinyapps.io URL is set */
+    .app-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      height: 280px;
+      text-align: center;
+      color: var(--gray);
+      padding: 2rem;
+    }
+    .app-placeholder svg { width: 34px; height: 34px; opacity: 0.5; }
+    .app-placeholder .small { font-size: 0.82rem; max-width: 360px; line-height: 1.6; }
+    details.embed-toggle > summary {
+      cursor: pointer;
+      font-family: var(--font-h);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--black);
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    details.embed-toggle > summary::-webkit-details-marker { display: none; }
+    details.embed-toggle > summary::before { content: '▸'; transition: transform 0.2s; }
+    details.embed-toggle[open] > summary::before { transform: rotate(90deg); }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Susan&nbsp;Frye<span>.</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Selected Work</span>
+    <h1>Live dashboards, built on real open data</h1>
+    <p class="lead">
+      Each of these is a working R/Shiny application driven by real public datasets —
+      not mock-ups. They show the kind of interactive tool your organization's own data
+      could power.
+    </p>
+  </div>
+</header>
+
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+  TO EMBED YOUR LIVE APPS: paste each shinyapps.io URL into the matching entry
+  below, then the script at the bottom of this file swaps the placeholder for a
+  live <iframe> automatically. Leave a URL blank to keep its placeholder.
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<script>
+  const APP_URLS = {
+    sar:  "https://susanmfrye.shinyapps.io/ontario-species-at-risk/",  // App A — GBIF
+    bbs:  "https://susanmfrye.shinyapps.io/ontario-bbs-trends/",       // App B — BBS
+    tree: "https://susanmfrye.shinyapps.io/toronto-urban-forest/",     // App C — Toronto trees
+    inat: ""    // App D — iNaturalist Phenology (not deployed — free-tier app limit)
+  };
+</script>
+
+<section class="section">
+  <div class="container">
+    <div class="work-list">
+
+      <!-- PROJECT 01 — SAR -->
+      <article class="project-card" style="--c:var(--c-sar);">
+        <div class="proj-num">01</div>
+        <div class="proj-body">
+          <h2 class="proj-title">Ontario Species at Risk — Occurrence Explorer</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            Conservation staff need to see <em>where</em> and <em>when</em> at-risk species
+            have been recorded — but raw occurrence records sit in spreadsheets no one can
+            interrogate. This dashboard maps live GBIF records for five Ontario species at
+            risk, with decade-by-decade trends and seasonal detection patterns.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">rgbif</span>
+              <span class="tag">leaflet</span>
+              <span class="tag">plotly</span>
+              <span class="tag">Real data</span>
+            </div>
+            <a class="proj-link" data-app="sar" href="#" target="_blank" rel="noopener">View live app ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded app</summary>
+            <div class="app-embed" data-embed="sar">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">Ontario Species at Risk — GBIF Occurrences</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                <strong>Live app not yet connected</strong>
+                <span class="small">Deploy <code>app_a_gbif_sar.R</code> to shinyapps.io and paste its URL into <code>APP_URLS.sar</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- PROJECT 02 — BBS -->
+      <article class="project-card" style="--c:var(--c-bbs);">
+        <div class="proj-num">02</div>
+        <div class="proj-body">
+          <h2 class="proj-title">Breeding Bird Survey — Ontario Population Trends</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            Fifty years of Breeding Bird Survey data hold the answer to "is this species
+            declining?" — but the raw counts are impenetrable. This dashboard turns the
+            official BBS dataset into route-level richness maps and species trend lines,
+            with a relative-abundance index that puts every species on the same scale.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">bbsBayes2</span>
+              <span class="tag">leaflet</span>
+              <span class="tag">plotly</span>
+              <span class="tag">Real data</span>
+            </div>
+            <a class="proj-link" data-app="bbs" href="#" target="_blank" rel="noopener">View live app ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded app</summary>
+            <div class="app-embed" data-embed="bbs">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">Ontario Breeding Bird Survey — Population Trends</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg>
+                <strong>Live app not yet connected</strong>
+                <span class="small">Deploy <code>app_b_bbs_trends.R</code> to shinyapps.io and paste its URL into <code>APP_URLS.bbs</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- PROJECT 03 — Toronto trees -->
+      <article class="project-card" style="--c:var(--c-tree);">
+        <div class="proj-num">03</div>
+        <div class="proj-body">
+          <h2 class="proj-title">Toronto Urban Forest — Street Tree Inventory</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            A municipal tree inventory of 700,000+ records is impossible to explore in a
+            spreadsheet. This dashboard pulls the City of Toronto's open street-tree data
+            into a density map, species and size-class charts, and a filterable table —
+            the kind of tool a parks department uses to plan canopy targets.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">CKAN API</span>
+              <span class="tag">leaflet.extras</span>
+              <span class="tag">DT</span>
+              <span class="tag">Real data</span>
+            </div>
+            <a class="proj-link" data-app="tree" href="#" target="_blank" rel="noopener">View live app ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded app</summary>
+            <div class="app-embed" data-embed="tree">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">Toronto Urban Forest — Street Tree Inventory</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22v-7m0 0l-3.5-2M12 15l3.5-2M12 2a5 5 0 015 5 4 4 0 01.5 8H6.5A4 4 0 017 7a5 5 0 015-5z"/></svg>
+                <strong>Live app not yet connected</strong>
+                <span class="small">Deploy <code>app_c_toronto_trees.R</code> to shinyapps.io and paste its URL into <code>APP_URLS.tree</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- PROJECT 04 — iNaturalist -->
+      <article class="project-card" style="--c:var(--c-inat);">
+        <div class="proj-num">04</div>
+        <div class="proj-body">
+          <h2 class="proj-title">iNaturalist Ontario — Phenology &amp; Hotspots</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            Citizen-science records are vast but messy. This dashboard distills tens of
+            thousands of research-grade iNaturalist observations into biodiversity hotspot
+            maps and phenology curves — showing when birds, butterflies, plants, and
+            herptiles peak across the Ontario field season.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">rinat</span>
+              <span class="tag">leaflet heatmap</span>
+              <span class="tag">ggplot2</span>
+              <span class="tag">Real data</span>
+            </div>
+            <a class="proj-link" data-app="inat" href="#" target="_blank" rel="noopener">View live app ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded app</summary>
+            <div class="app-embed" data-embed="inat">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">iNaturalist Ontario — Phenology &amp; Biodiversity Hotspots</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 0114 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                <strong>Live app not yet connected</strong>
+                <span class="small">Deploy <code>app_d_inat_phenology.R</code> to shinyapps.io and paste its URL into <code>APP_URLS.inat</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+    </div>
+
+    <p style="margin-top:2.5rem; color:var(--gray); font-size:0.85rem;">
+      All four dashboards use real public open data. Simulated-data demos
+      (forest inventory, biodiversity monitoring, green-space mapping) are available on request.
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Susan Frye · Ecological Data Analysis · Ontario, Canada</p>
+    <a href="mailto:susanmafrye@gmail.com">susanmafrye@gmail.com</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Wire up live app URLs: swap placeholders for iframes, set "View live app" links.
+  Object.entries(APP_URLS).forEach(([key, url]) => {
+    const link = document.querySelector(`.proj-link[data-app="${key}"]`);
+    const box  = document.querySelector(`.app-embed[data-embed="${key}"]`);
+    if (!url) {
+      if (link) { link.style.opacity = 0.45; link.style.pointerEvents = 'none'; link.textContent = 'Coming soon'; }
+      return;
+    }
+    if (link) link.href = url;
+    if (box) {
+      const ph = box.querySelector('.app-placeholder');
+      const urlLabel = box.querySelector('.url');
+      if (urlLabel) urlLabel.textContent = url.replace(/^https?:\/\//, '');
+      if (ph) {
+        const frame = document.createElement('iframe');
+        frame.src = url;
+        frame.loading = 'lazy';
+        frame.title = box.querySelector('.url')?.textContent || 'Shiny app';
+        ph.replaceWith(frame);
+      }
+    }
+  });
+</script>
+</body>
+</html>
