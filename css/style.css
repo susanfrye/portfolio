@@ -29,7 +29,7 @@
 
   --max-w: 1100px;
   --nav-h: 68px;
-  --radius: 10px;
+  --radius: 0px;
 }
 
 /* ── Reset ───────────────────────────────────────────────── */
@@ -75,6 +75,17 @@ body.textured .hero,
 body.textured .stats-strip,
 body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
 
+/* ── Quadrat grid background (subtle square grid, ties to the brand) ──
+   Add class "quadrat-grid" to <body> to enable site-wide.                */
+body.quadrat-grid {
+  background-image:
+    linear-gradient(to right, rgba(13, 148, 136, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 148, 136, 0.07) 1px, transparent 1px);
+  background-size: 46px 46px;
+  background-position: -1px -1px;
+}
+body.quadrat-grid .site-nav { background-color: rgba(255, 255, 255, 0.92); }
+
 /* ── NAV ─────────────────────────────────────────────────── */
 .site-nav {
   position: sticky;
@@ -106,7 +117,16 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
   letter-spacing: -0.01em;
 }
 
-.nav-logo span { color: var(--teal); }
+/* square teal "period" after the wordmark (a nod to the quadrat) */
+.nav-logo .logo-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--teal);
+  border-radius: 0;
+  margin-left: 3px;
+  vertical-align: baseline;
+}
 
 .nav-links {
   display: flex;
@@ -133,7 +153,7 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
   right: 0;
   bottom: 0;
   height: 1.5px;
-  border-radius: 2px;
+  border-radius: 0;
   background: var(--teal);
   transform: scaleX(0);
   transform-origin: left;
@@ -159,7 +179,7 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
   width: 22px;
   height: 2px;
   background: var(--black);
-  border-radius: 2px;
+  border-radius: 0;
   transition: all 0.25s;
 }
 
@@ -256,7 +276,7 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
   display: inline-block;
   padding: 0.38rem 0.95rem;
   border: 1.5px solid var(--border);
-  border-radius: 999px;
+  border-radius: 0;
   font-family: var(--font-h);
   font-size: 0.8rem;
   font-weight: 500;
@@ -277,7 +297,7 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
   align-items: center;
   gap: 0.45rem;
   padding: 0.8rem 1.85rem;
-  border-radius: 7px;
+  border-radius: 0;
   font-family: var(--font-h);
   font-size: 0.92rem;
   font-weight: 600;
@@ -423,7 +443,7 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
 
 .svc-icon {
   width: 46px; height: 46px;
-  border-radius: 9px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -473,7 +493,7 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
   position: absolute;
   width: 10px;
   height: 10px;
-  border-radius: 3px;
+  border-radius: 0;
   background: var(--c, var(--teal));
   opacity: 0.20;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
@@ -565,7 +585,7 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
 .tag {
   padding: 0.22rem 0.65rem;
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 0;
   font-family: var(--font-h);
   font-size: 0.75rem;
   font-weight: 500;
@@ -599,11 +619,142 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
   align-items: start;
 }
 
+.about-photo {
+  margin: 0 0 1.9rem;
+  width: 190px;
+  height: 190px;
+  border-radius: 0;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  display: block;
+}
+
 .about-text h2 {
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 800;
   margin-bottom: 2rem;
   line-height: 1.2;
+}
+
+/* ── "Ways to work together" cards ───────────────────────── */
+.ways-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.way-card {
+  padding: 2rem 1.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.way-card:hover {
+  transform: translateY(-5px);
+  border-color: transparent;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+}
+.way-tag {
+  display: inline-block;
+  font-family: var(--font-h);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: #f0fdfa;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0;
+  margin-bottom: 1rem;
+}
+.way-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
+.way-card p  { font-size: 0.9rem; color: var(--gray); line-height: 1.7; }
+.way-card .way-best {
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* ── Contact form ────────────────────────────────────────── */
+.contact-form {
+  margin-top: 2.5rem;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.contact-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  font-family: var(--font-b);
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 0;
+  background: var(--white);
+  color: var(--black);
+  transition: border-color 0.18s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+.contact-form textarea { resize: vertical; }
+.contact-form button { align-self: flex-start; margin-top: 0.25rem; }
+@media (max-width: 560px) { .contact-form .form-row { grid-template-columns: 1fr; } }
+
+/* ── "How I work" process strip ──────────────────────────── */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 3rem;
+  counter-reset: step;
+}
+.process-step {
+  position: relative;
+  padding: 2rem 1.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.process-step:hover {
+  transform: translateY(-5px);
+  border-color: transparent;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+}
+.process-step::before {
+  counter-increment: step;
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--font-h);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 0.05em;
+}
+.process-step h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0.75rem 0 0.5rem;
+}
+.process-step p {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.65;
 }
 
 .about-text p {
@@ -640,7 +791,7 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
 .skill-card {
   padding: 1.1rem 1.25rem;
   border: 1.5px solid var(--border);
-  border-radius: 8px;
+  border-radius: 0;
   transition: border-color 0.2s, transform 0.2s;
 }
 .skill-card:hover { border-color: var(--teal); transform: translateY(-2px); }
@@ -715,6 +866,13 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
 }
 .footer-inner a:hover { color: var(--black); }
 
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
 /* ── Fade-up scroll animation ────────────────────────────── */
 .fade-up {
   opacity: 0;
@@ -786,3 +944,22 @@ body.textured .site-nav { background-color: rgba(255,255,255,0.85); }
   .skill-row { grid-template-columns: 1fr; }
   .contact-big { font-size: 2.2rem; }
 }
+
+/* ── Rounded-corner variant (for comparison) ─────────────────
+   The site is square by default. Add class "rounded" to <body>
+   on any page to preview the rounded version of every element.  */
+body.rounded .btn { border-radius: 7px; }
+body.rounded .pill { border-radius: 999px; }
+body.rounded .tag,
+body.rounded .way-tag { border-radius: 5px; }
+body.rounded .service-card,
+body.rounded .way-card,
+body.rounded .process-step,
+body.rounded .app-embed,
+body.rounded .skill-card { border-radius: 10px; }
+body.rounded .svc-icon { border-radius: 9px; }
+body.rounded .svc-squares span { border-radius: 3px; }
+body.rounded .about-photo { border-radius: 16px; }
+body.rounded .contact-form input,
+body.rounded .contact-form textarea { border-radius: 8px; }
+body.rounded .nav-logo .logo-dot { border-radius: 50%; }

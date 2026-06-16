@@ -1,7 +1,12 @@
-# Brand Profile — Susan Frye Consulting
+# Brand Profile — Quadrat Studio
 
 A quick-reference style guide for the website and any future materials
 (business cards, slide decks, reports, social profiles).
+
+**Business name:** Quadrat Studio
+**Tagline / attribution:** by Susan Frye, PhD
+**What it means:** a *quadrat* is the square frame ecologists place to sample
+data systematically — the brand evokes structured, rigorous ecological data work.
 
 ---
 
@@ -68,7 +73,12 @@ https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&
 ---
 
 ## Logo / wordmark
-- Text wordmark: **"Susan Frye."** in Space Grotesk 700, with the period in teal (`#0d9488`).
+- **Mark:** a 3×3 quadrat (square grid) with the bottom-right cell filled teal
+  (`#0d9488`) — the filled cell represents the signal sampled from the data, and
+  the corner placement gives a subtle "Q" lean. Source: `favicon.svg` / inline in nav.
+- **Wordmark:** "Quadrat Studio" in Space Grotesk 700 — "Quadrat" in ink (`#0a0a0a`),
+  "Studio" in teal (`#0d9488`).
+- **Lockup:** mark + wordmark, horizontally aligned (see site nav).
 
 ---
 
@@ -90,5 +100,11 @@ https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&
 ---
 
 ## Domains
-- Primary: `susanfrye.com`
-- Secondary (redirect): `susanfrye.ca`
+- **Business (this site):** `quadratstudio.com` (to purchase / confirm on Porkbun)
+- **Personal / academic site:** `susanfrye.com` + `susanfrye.ca` (redirect) — kept
+  separate from the business so a name-search surfaces the academic identity.
+
+## Motion / brand cohesion
+The square/grid motif runs through everything: the logo (quadrat cells), the
+subtle `quadrat-grid` page background, and the animated accent squares that
+scatter on the service cards. One visual language across the whole identity.

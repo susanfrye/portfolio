@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Susan Frye</title>
+  <title>Contact — Quadrat Studio</title>
   <meta name="description" content="Get in touch with Susan Frye for ecological data analysis, Shiny dashboards, and spatial mapping projects." />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
 <body>
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Susan&nbsp;Frye<span>.</span></a>
+    <a href="index.html" class="nav-logo" aria-label="Quadrat Studio home">Quadrat&nbsp;Studio<span class="logo-dot"></span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -32,20 +33,32 @@
       Let's build something<br><em>clear</em> from your data.
     </h2>
     <div class="contact-row fade-up">
-      <a href="mailto:susan@susanfrye.com" class="contact-email">susan@susanfrye.com</a>
+      <a href="mailto:susan@quadratstudio.ca" class="contact-email">susan@quadratstudio.ca</a>
     </div>
     <p class="contact-note fade-up">
       I work with conservation authorities, municipal parks departments, forestry
       consultants, and environmental NGOs. Tell me about your data and
       what you need it to do — I'll reply within a couple of business days.
     </p>
+
+    <!-- Contact form — TO ACTIVATE: create a free form at https://formspree.io,
+         then replace YOUR_FORM_ID below with the ID it gives you (e.g. xxyyzzaa). -->
+    <form class="contact-form fade-up" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+      </div>
+      <input type="text" name="organization" placeholder="Organization (optional)" />
+      <textarea name="message" rows="5" placeholder="Tell me about your project…" required></textarea>
+      <button type="submit" class="btn btn-dark">Send message →</button>
+    </form>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>© 2026 Susan Frye · Ecological Data Analysis</p>
-    <a href="mailto:susan@susanfrye.com">susan@susanfrye.com</a>
+    <p>© 2026 Quadrat Studio · by Susan Frye, PhD</p>
+    <a href="mailto:susan@quadratstudio.ca">susan@quadratstudio.ca</a>
   </div>
 </footer>
 
