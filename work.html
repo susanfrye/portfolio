@@ -119,7 +119,11 @@
     sar:  "https://susanmfrye.shinyapps.io/ontario-species-at-risk/",  // App A — GBIF
     bbs:  "https://susanmfrye.shinyapps.io/ontario-bbs-trends/",       // App B — BBS
     tree: "https://susanmfrye.shinyapps.io/toronto-urban-forest/",     // App C — Toronto trees
-    inat: ""    // App D — iNaturalist Phenology (not deployed — free-tier app limit)
+    inat: "",   // App D — iNaturalist Phenology (not deployed — free-tier app limit)
+    sarscreen: "https://connect.posit.cloud/susanfrye/content/019edb89-8acb-d0a7-b3c7-a30e3562fc27",  // App E — SAR site-screening
+    bees:      "https://connect.posit.cloud/susanfrye/content/019edb85-7b7f-2c31-959e-f60f6b3fd2f8",  // App F — native bee tracker
+    power:     "https://connect.posit.cloud/susanfrye/content/019edb86-2aa2-7343-e273-346e93f3a0ac",  // App G — monitoring-design power tool
+    report:    "https://connect.posit.cloud/susanfrye/content/019edb8e-0b31-8645-e4c4-770672b28bff"   // Quarto biodiversity report
   };
 </script>
 
@@ -295,10 +299,180 @@
         </div>
       </article>
 
+      <!-- PROJECT 05 — SAR screening tool -->
+      <article class="project-card" style="--c:#0d9488;">
+        <div class="proj-num">05</div>
+        <div class="proj-body">
+          <h2 class="proj-title">Species at Risk — Site Screening Tool</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            Before any development or fieldwork, someone has to ask: which species at
+            risk have been recorded near this site? This tool takes a location and a
+            search radius and returns every nearby at-risk record — mapped, summarised
+            by species and recency, and downloadable as a CSV.
+          </p>
+          <div class="proj-problem-label">What it shows</div>
+          <p class="proj-problem">
+            The kind of first-pass screening done early in an environmental impact
+            assessment — turned into a self-serve tool a consultant or authority can run
+            in seconds.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">rgbif</span>
+              <span class="tag">leaflet</span>
+              <span class="tag">geosphere</span>
+              <span class="tag">Real data</span>
+            </div>
+            <a class="proj-link" data-app="sarscreen" href="#" target="_blank" rel="noopener">View live app ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded app</summary>
+            <div class="app-embed" data-embed="sarscreen">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">Species at Risk — Site Screening Tool</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                <strong>Live app not yet connected</strong>
+                <span class="small">Deploy <code>sar-screening/app.R</code> to Posit Connect Cloud and paste its URL into <code>APP_URLS.sarscreen</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- PROJECT 06 — Native bees -->
+      <article class="project-card" style="--c:#E69F00;">
+        <div class="proj-num">06</div>
+        <div class="proj-body">
+          <h2 class="proj-title">Ontario Native Bees — Bumble Bee Tracker</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            Several Ontario bumble bees are in steep decline — including the Endangered
+            Rusty-patched Bumble Bee — but the records are scattered across museums and
+            citizen science. This tracker maps Bombus occurrences statewide, with
+            flight-period phenology and at-risk status at a glance.
+          </p>
+          <div class="proj-problem-label">What it shows</div>
+          <p class="proj-problem">
+            Native-bee monitoring is the focus of my doctoral research — this is the
+            specialist lens I bring to pollinator habitat, restoration, and at-risk
+            species work.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">rgbif</span>
+              <span class="tag">leaflet heatmap</span>
+              <span class="tag">plotly</span>
+              <span class="tag">Real data</span>
+            </div>
+            <a class="proj-link" data-app="bees" href="#" target="_blank" rel="noopener">View live app ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded app</summary>
+            <div class="app-embed" data-embed="bees">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">Ontario Native Bees — Bumble Bee Tracker</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 0114 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                <strong>Live app not yet connected</strong>
+                <span class="small">Deploy <code>native-bees/app.R</code> to Posit Connect Cloud and paste its URL into <code>APP_URLS.bees</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- PROJECT 07 — Monitoring-design power tool -->
+      <article class="project-card" style="--c:#7c3aed;">
+        <div class="proj-num">07</div>
+        <div class="proj-body">
+          <h2 class="proj-title">Monitoring Design — Trend Detection Power</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            How much monitoring is enough? An underpowered program wastes budget and can
+            miss a real decline entirely. This tool simulates a monitoring program and
+            estimates the power to detect a trend, given the number of plots, years,
+            effect size, and site variability.
+          </p>
+          <div class="proj-problem-label">What it shows</div>
+          <p class="proj-problem">
+            The study-design judgment behind defensible monitoring — answering "how many
+            plots and years do we need?" before a single dollar is spent in the field.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">simulation</span>
+              <span class="tag">ggplot2</span>
+              <span class="tag">study design</span>
+            </div>
+            <a class="proj-link" data-app="power" href="#" target="_blank" rel="noopener">Open the tool ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded app</summary>
+            <div class="app-embed" data-embed="power">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">Monitoring Design — Trend Detection Power</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg>
+                <strong>Live app not yet connected</strong>
+                <span class="small">Deploy <code>monitoring-power/app.R</code> to Posit Connect Cloud and paste its URL into <code>APP_URLS.power</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- PROJECT 08 — Reproducible biodiversity report -->
+      <article class="project-card" style="--c:#3a7d44;">
+        <div class="proj-num">08</div>
+        <div class="proj-body">
+          <h2 class="proj-title">Biodiversity Monitoring Summary — Reproducible Report</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            The real deliverable is often a defensible report for a board or regulator —
+            not a dashboard. This reproducible Quarto report turns public records into a
+            clear summary with maps, phenology, and trends, and re-renders automatically
+            when the underlying data changes.
+          </p>
+          <div class="proj-problem-label">What it shows</div>
+          <p class="proj-problem">
+            The analysis-and-reporting side of the work: auditable, repeatable documents
+            you can hand to a regulator — the same machinery run on your own data.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">Quarto</span>
+              <span class="tag">rgbif</span>
+              <span class="tag">reproducible</span>
+              <span class="tag">Real data</span>
+            </div>
+            <a class="proj-link" data-app="report" href="#" target="_blank" rel="noopener">View report ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded report</summary>
+            <div class="app-embed" data-embed="report">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">Biodiversity Monitoring Summary</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M7 21h10a2 2 0 002-2V8.414a1 1 0 00-.293-.707l-4.414-4.414A1 1 0 0013.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <strong>Report not yet connected</strong>
+                <span class="small">Publish <code>biodiversity-report/report_biodiversity_summary.qmd</code> to Posit Connect Cloud and paste its URL into <code>APP_URLS.report</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
     </div>
 
     <p style="margin-top:2.5rem; color:var(--gray); font-size:0.85rem;">
-      All four dashboards use real public open data. Simulated-data demos
+      These tools and reports are built on real public open data — the monitoring-design
+      power tool is simulation-based, to demonstrate study design. Further simulated-data demos
       (forest inventory, biodiversity monitoring, green-space mapping) are available on request.
     </p>
   </div>
@@ -313,15 +487,19 @@
 
 <script src="js/main.js"></script>
 <script>
-  // Wire up live app URLs: swap placeholders for iframes, set "View live app" links.
+  // Wire up live app URLs. shinyapps.io allows iframe embedding; Posit Connect Cloud
+  // sends X-Frame-Options: SAMEORIGIN, so those open via the link instead of embedding.
   Object.entries(APP_URLS).forEach(([key, url]) => {
     const link = document.querySelector(`.proj-link[data-app="${key}"]`);
     const box  = document.querySelector(`.app-embed[data-embed="${key}"]`);
+    const details = box ? box.closest('details.embed-toggle') : null;
     if (!url) {
       if (link) { link.style.opacity = 0.45; link.style.pointerEvents = 'none'; link.textContent = 'Coming soon'; }
       return;
     }
     if (link) link.href = url;
+    const canEmbed = !/connect\.posit\.cloud/.test(url);
+    if (!canEmbed) { if (details) details.style.display = 'none'; return; }
     if (box) {
       const ph = box.querySelector('.app-placeholder');
       const urlLabel = box.querySelector('.url');
