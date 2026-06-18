@@ -100,7 +100,8 @@ site/
 ├── services.html     Services (3 cards)
 ├── work.html         Portfolio — 4 app cards + iframe embeds  ← paste URLs here
 ├── about.html        About + skills
-├── contact.html      Contact
+├── contact.html      Contact — get in touch (Formspree)
+├── intake.html       Start a Project — quote/intake form (Formspree)
 ├── css/style.css     Shared styles
 ├── js/main.js        Nav toggle + scroll animations
 └── DEPLOY.md         This file

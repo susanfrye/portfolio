@@ -717,6 +717,70 @@ body.quadrat-grid .site-nav { background-color: rgba(255, 255, 255, 0.92); }
 .contact-form button { align-self: flex-start; margin-top: 0.25rem; }
 @media (max-width: 560px) { .contact-form .form-row { grid-template-columns: 1fr; } }
 
+/* ── Project intake form (extends .contact-form) ──────────── */
+.intake-form { max-width: 620px; gap: 1.75rem; }
+.intake-form .form-section {
+  border: none;
+  border-top: 1.5px solid var(--border);
+  padding: 1.5rem 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.intake-form .form-section:first-of-type { border-top: none; padding-top: 0; }
+.intake-form legend {
+  font-family: var(--font-h);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  padding: 0;
+  margin-bottom: 0.25rem;
+}
+.intake-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--font-h);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--black);
+}
+.intake-form .field-hint {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--gray);
+  font-family: var(--font-b);
+}
+.intake-form .field input,
+.intake-form .field textarea { font-family: var(--font-b); font-weight: 400; }
+.intake-form .checkbox-grid { display: grid; gap: 0.5rem; }
+.intake-form .checkbox-grid .check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-family: var(--font-b);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--black);
+  cursor: pointer;
+  line-height: 1.4;
+}
+.intake-form .checkbox-grid .check input {
+  width: auto;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  accent-color: var(--teal);
+}
+.intake-form .form-fineprint {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-top: 0.5rem;
+  max-width: 540px;
+}
+
 /* ── "How I work" process strip ──────────────────────────── */
 .process-grid {
   display: grid;

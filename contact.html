@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Quadrat Studio</title>
-  <meta name="description" content="Get in touch with Susan Frye for ecological data analysis, Shiny dashboards, and spatial mapping projects." />
+  <meta name="description" content="Get in touch with Susan Frye — ecological and environmental data analysis, monitoring design, mapping, and interactive dashboards." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
@@ -22,6 +22,7 @@
       <li><a href="work.html">Work</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="intake.html">Start a Project</a></li>
     </ul>
   </div>
 </nav>
@@ -37,13 +38,14 @@
     </div>
     <p class="contact-note fade-up">
       I work with conservation authorities, municipal parks departments, forestry
-      consultants, and environmental NGOs. Tell me about your data and
-      what you need it to do — I'll reply within a couple of business days.
+      and environmental consultants, and environmental NGOs. Send a quick note about
+      your data and what you need it to do — I'll reply within a couple of business days.
     </p>
 
-    <!-- Contact form — TO ACTIVATE: create a free form at https://formspree.io,
-         then replace YOUR_FORM_ID below with the ID it gives you (e.g. xxyyzzaa). -->
-    <form class="contact-form fade-up" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <!-- Contact form — connected to Formspree (form xjgddqoy → susan@quadratstudio.ca).
+         Submissions are emailed to you; the "email" field is used as the reply-to. -->
+    <form class="contact-form fade-up" action="https://formspree.io/f/xjgddqoy" method="POST">
+      <input type="hidden" name="_subject" value="New Quadrat Studio enquiry" />
       <div class="form-row">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Your email" required />
@@ -52,6 +54,11 @@
       <textarea name="message" rows="5" placeholder="Tell me about your project…" required></textarea>
       <button type="submit" class="btn btn-dark">Send message →</button>
     </form>
+
+    <p class="contact-note fade-up" style="margin-top:2rem;">
+      Ready for a quote? The <a href="intake.html">project intake form →</a> walks
+      through a few questions so I can scope the work and reply with pricing.
+    </p>
   </div>
 </section>
 

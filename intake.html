@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start a Project — Quadrat Studio</title>
+  <meta name="description" content="Request a quote from Quadrat Studio — a short project intake form for ecological and environmental data analysis, monitoring design, mapping, and interactive dashboards." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Quadrat Studio home">Quadrat&nbsp;Studio<span class="logo-dot"></span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="intake.html" class="active">Start a Project</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Get a Quote</span>
+    <h1>Start a project</h1>
+    <p class="lead">
+      A few quick questions so I can scope the work and reply within a couple of
+      business days with next steps or a quote. Only your name, email, and a one-line
+      summary are required — fill in as much of the rest as you can. Just want to say
+      hello first? Head to the <a href="contact.html">contact page</a>.
+    </p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Project intake form — connected to Formspree (form xjgddqoy → susan@quadratstudio.ca).
+         Submissions are emailed to you; you reply with a quote. The "email" field is
+         used automatically as the reply-to address. -->
+    <form class="contact-form intake-form fade-up" action="https://formspree.io/f/xjgddqoy" method="POST">
+      <input type="hidden" name="_subject" value="New Quadrat Studio project enquiry" />
+
+      <fieldset class="form-section">
+        <legend>1 · Your details</legend>
+        <div class="form-row">
+          <label class="field">Name &amp; organization
+            <input type="text" name="name_org" placeholder="Jane Doe — Example Conservation Authority" required />
+          </label>
+          <label class="field">Email
+            <input type="email" name="email" placeholder="you@example.org" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="field">Phone <span class="field-hint">optional</span>
+            <input type="tel" name="phone" placeholder="(555) 555-5555" />
+          </label>
+          <label class="field">Your role / who signs off
+            <input type="text" name="role" placeholder="e.g. Stewardship Coordinator" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>2 · The project</legend>
+        <label class="field">In a sentence, what do you need?
+          <span class="field-hint">The problem, not the method.</span>
+          <input type="text" name="need" placeholder="e.g. We need defensible trend evidence for our bird monitoring." required />
+        </label>
+        <span class="field">What kind of work is it? <span class="field-hint">Check all that apply.</span></span>
+        <div class="checkbox-grid">
+          <label class="check"><input type="checkbox" name="work_type" value="Analysis & reporting" /> Analysis &amp; reporting (stats, trends, diversity, modelling)</label>
+          <label class="check"><input type="checkbox" name="work_type" value="Monitoring or survey design" /> Monitoring or survey design (sampling, plots, indicators)</label>
+          <label class="check"><input type="checkbox" name="work_type" value="Mapping / spatial analysis" /> Mapping / spatial analysis</label>
+          <label class="check"><input type="checkbox" name="work_type" value="Interactive dashboard or data tool" /> Interactive dashboard or data tool</label>
+          <label class="check"><input type="checkbox" name="work_type" value="Subcontract / overflow support" /> Subcontract / overflow support for a firm</label>
+          <label class="check"><input type="checkbox" name="work_type" value="Other / not sure" /> Other / not sure yet</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>3 · The data</legend>
+        <label class="field">What data is involved?
+          <span class="field-hint">Type, source, roughly how much.</span>
+          <textarea name="data_about" rows="2" placeholder="e.g. ~15 years of point-count data across 40 routes."></textarea>
+        </label>
+        <label class="field">What format is it in, and who provides it?
+          <span class="field-hint">e.g. Excel, shapefiles, field sheets.</span>
+          <input type="text" name="data_format" placeholder="e.g. Excel + shapefiles, from our field team" />
+        </label>
+        <label class="field">Anything sensitive or confidential?
+          <span class="field-hint">Species-at-risk locations, private land, etc.</span>
+          <input type="text" name="data_sensitive" placeholder="e.g. Includes SAR nest locations" />
+        </label>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>4 · The outcome</legend>
+        <label class="field">What does the finished deliverable look like?
+          <span class="field-hint">Report, map, dashboard, dataset.</span>
+          <input type="text" name="deliverable" placeholder="e.g. A regulator-ready trend report with figures" />
+        </label>
+        <label class="field">Who is the audience?
+          <span class="field-hint">Regulator, board, public, internal staff.</span>
+          <input type="text" name="audience" placeholder="e.g. Our board and the Ministry" />
+        </label>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>5 · Timeline &amp; budget</legend>
+        <div class="form-row">
+          <label class="field">When do you need it by?
+            <input type="text" name="timeline" placeholder="e.g. Draft by end of September" />
+          </label>
+          <label class="field">Budget range in mind? <span class="field-hint">optional</span>
+            <input type="text" name="budget" placeholder="e.g. $3–5k, or not sure yet" />
+          </label>
+        </div>
+        <label class="field">How did you hear about Quadrat Studio?
+          <input type="text" name="referral" placeholder="e.g. LinkedIn, a colleague, search" />
+        </label>
+      </fieldset>
+
+      <button type="submit" class="btn btn-dark">Send project details →</button>
+      <p class="form-fineprint">I'll review your details and reply within a couple of business days with next steps or a quote — no obligation.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Quadrat Studio · by Susan Frye, PhD Candidate</p>
+    <a href="mailto:susan@quadratstudio.ca">susan@quadratstudio.ca</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
