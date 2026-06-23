@@ -121,9 +121,10 @@
     tree: "https://susanmfrye.shinyapps.io/toronto-urban-forest/",     // App C — Toronto trees
     inat: "https://connect.posit.cloud/susanfrye/content/019edc81-d3c3-8688-c563-1b6663d97b2f",   // App D — iNaturalist Phenology (Posit Connect Cloud)
     sarscreen: "https://connect.posit.cloud/susanfrye/content/019edb89-8acb-d0a7-b3c7-a30e3562fc27",  // App E — SAR site-screening
-    bees:      "https://connect.posit.cloud/susanfrye/content/019edb85-7b7f-2c31-959e-f60f6b3fd2f8",  // App F — native bee tracker
-    power:     "https://connect.posit.cloud/susanfrye/content/019edb86-2aa2-7343-e273-346e93f3a0ac",  // App G — monitoring-design power tool
-    report:    "https://connect.posit.cloud/susanfrye/content/019edb8e-0b31-8645-e4c4-770672b28bff"   // Quarto biodiversity report
+    power:     "https://connect.posit.cloud/susanfrye/content/019edb86-2aa2-7343-e273-346e93f3a0ac",  // App F — monitoring-design power tool
+    report:    "https://connect.posit.cloud/susanfrye/content/019edb8e-0b31-8645-e4c4-770672b28bff",  // Quarto biodiversity report
+    bombus:    "https://connect.posit.cloud/susanfrye/content/019ef539-6df1-e9ab-56ee-92022ece0a91",  // App G — at-risk bumble bee decline & range-shift dashboard
+    bombusrep: "https://connect.posit.cloud/susanfrye/content/019ef533-a689-bcb4-5844-07a7cf75ab6e"   // Bumble bee decline report
   };
 </script>
 
@@ -342,52 +343,9 @@
         </div>
       </article>
 
-      <!-- PROJECT 06 — Native bees -->
-      <article class="project-card" style="--c:#E69F00;">
-        <div class="proj-num">06</div>
-        <div class="proj-body">
-          <h2 class="proj-title">Ontario Native Bees — Bumble Bee Tracker</h2>
-          <div class="proj-problem-label">The problem</div>
-          <p class="proj-problem">
-            Several Ontario bumble bees are in steep decline — including the Endangered
-            Rusty-patched Bumble Bee — but the records are scattered across museums and
-            citizen science. This tracker maps Bombus occurrences statewide, with
-            flight-period phenology and at-risk status at a glance.
-          </p>
-          <div class="proj-problem-label">What it shows</div>
-          <p class="proj-problem">
-            Native-bee monitoring is the focus of my doctoral research — this is the
-            specialist lens I bring to pollinator habitat, restoration, and at-risk
-            species work.
-          </p>
-          <div class="proj-footer">
-            <div class="proj-tags">
-              <span class="tag">rgbif</span>
-              <span class="tag">leaflet heatmap</span>
-              <span class="tag">plotly</span>
-              <span class="tag">Real data</span>
-            </div>
-            <a class="proj-link" data-app="bees" href="#" target="_blank" rel="noopener">View live app ↗</a>
-          </div>
-          <details class="embed-toggle"><summary>Preview embedded app</summary>
-            <div class="app-embed" data-embed="bees">
-              <div class="app-embed-bar">
-                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-                <span class="url">Ontario Native Bees — Bumble Bee Tracker</span>
-              </div>
-              <div class="app-placeholder">
-                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 0114 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
-                <strong>Live app not yet connected</strong>
-                <span class="small">Deploy <code>native-bees/app.R</code> to Posit Connect Cloud and paste its URL into <code>APP_URLS.bees</code> at the top of this page.</span>
-              </div>
-            </div>
-          </details>
-        </div>
-      </article>
-
-      <!-- PROJECT 07 — Monitoring-design power tool -->
+      <!-- PROJECT 06 — Monitoring-design power tool -->
       <article class="project-card" style="--c:#7c3aed;">
-        <div class="proj-num">07</div>
+        <div class="proj-num">06</div>
         <div class="proj-body">
           <h2 class="proj-title">Monitoring Design — Trend Detection Power</h2>
           <div class="proj-problem-label">The problem</div>
@@ -426,9 +384,9 @@
         </div>
       </article>
 
-      <!-- PROJECT 08 — Reproducible biodiversity report -->
+      <!-- PROJECT 07 — Reproducible biodiversity report -->
       <article class="project-card" style="--c:#3a7d44;">
-        <div class="proj-num">08</div>
+        <div class="proj-num">07</div>
         <div class="proj-body">
           <h2 class="proj-title">Biodiversity Monitoring Summary — Reproducible Report</h2>
           <div class="proj-problem-label">The problem</div>
@@ -462,6 +420,93 @@
                 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M7 21h10a2 2 0 002-2V8.414a1 1 0 00-.293-.707l-4.414-4.414A1 1 0 0013.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                 <strong>Report not yet connected</strong>
                 <span class="small">Publish <code>biodiversity-report/report_biodiversity_summary.qmd</code> to Posit Connect Cloud and paste its URL into <code>APP_URLS.report</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- PROJECT 08 — At-risk bumble bee decline & range shift -->
+      <article class="project-card" style="--c:#D55E00;">
+        <div class="proj-num">08</div>
+        <div class="proj-body">
+          <h2 class="proj-title">At-Risk Bumble Bees — Decline &amp; Range Shift</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            Recovery teams report the Yellow-banded Bumble Bee shifting north and the
+            Endangered Rusty-patched Bumble Bee vanishing from Ontario — but raw record
+            counts are misleading, because everyone is recording more bees every year.
+            This dashboard reads the open data with effort-robust metrics: range-centroid
+            shift, at-risk records as a share of all Bombus, and a survey-gap grid that
+            flags where to look next.
+          </p>
+          <div class="proj-problem-label">What it shows</div>
+          <p class="proj-problem">
+            The ecological judgment that separates a real signal from a sampling artefact —
+            the specialist lens from my doctoral research on native bees, built to be
+            useful to a recovery program as-is.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">rgbif</span>
+              <span class="tag">range shift</span>
+              <span class="tag">effort-robust</span>
+              <span class="tag">Real data</span>
+            </div>
+            <a class="proj-link" data-app="bombus" href="#" target="_blank" rel="noopener">View live app ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded app</summary>
+            <div class="app-embed" data-embed="bombus">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">At-Risk Bumble Bees — Decline &amp; Range Shift</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 0114 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                <strong>Live app not yet connected</strong>
+                <span class="small">Deploy <code>bumblebee-decline/app.R</code> to Posit Connect Cloud and paste its URL into <code>APP_URLS.bombus</code> at the top of this page.</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- PROJECT 09 — Bumble bee decline report -->
+      <article class="project-card" style="--c:#E69F00;">
+        <div class="proj-num">09</div>
+        <div class="proj-body">
+          <h2 class="proj-title">Ontario's At-Risk Bumble Bees — Reproducible Report</h2>
+          <div class="proj-problem-label">The problem</div>
+          <p class="proj-problem">
+            The companion to the dashboard: a defensible, citable document a recovery team
+            or board can read in five minutes. It walks through the northward shift, the
+            decline signal, and a ranked survey-gap shortlist — every figure regenerated
+            from public GBIF data, with the sampling-effort caveats stated plainly.
+          </p>
+          <div class="proj-problem-label">What it shows</div>
+          <p class="proj-problem">
+            The analysis-and-reporting craft: a reproducible Quarto report that turns an
+            open-data screen into something an organisation can act on.
+          </p>
+          <div class="proj-footer">
+            <div class="proj-tags">
+              <span class="tag">Quarto</span>
+              <span class="tag">rgbif</span>
+              <span class="tag">reproducible</span>
+              <span class="tag">Real data</span>
+            </div>
+            <a class="proj-link" data-app="bombusrep" href="#" target="_blank" rel="noopener">View report ↗</a>
+          </div>
+          <details class="embed-toggle"><summary>Preview embedded report</summary>
+            <div class="app-embed" data-embed="bombusrep">
+              <div class="app-embed-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="url">Ontario's At-Risk Bumble Bees</span>
+              </div>
+              <div class="app-placeholder">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M7 21h10a2 2 0 002-2V8.414a1 1 0 00-.293-.707l-4.414-4.414A1 1 0 0013.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <strong>Report not yet connected</strong>
+                <span class="small">Publish <code>bumblebee-decline-report/report_bumblebee_decline.qmd</code> to Posit Connect Cloud and paste its URL into <code>APP_URLS.bombusrep</code> at the top of this page.</span>
               </div>
             </div>
           </details>
