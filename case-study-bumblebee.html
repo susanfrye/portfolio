@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ontario At-Risk Bumble Bee Decline — Case Study | Quadrat Studio</title>
+  <meta name="description" content="How I built an honest open-data tool tracking Ontario bumble bee decline and range shift — using GBIF occurrence records, observer-bias correction, and a survey-effort grid." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- GA4 placeholder — replace GA_MEASUREMENT_ID once you have it -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script> -->
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Quadrat Studio home">Quadrat&nbsp;Studio<span class="logo-dot"></span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="intake.html">Start a Project</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Case Study</span>
+    <h1>Ontario At-Risk Bumble Bee Decline & Range Shift</h1>
+    <p class="lead">
+      Tracking population collapse in <em>Bombus terricola</em>, <em>B. affinis</em>,
+      and four other at-risk species using GBIF occurrence records — and why raw trend
+      lines would have told the wrong story.
+    </p>
+    <div class="stack-pills" style="margin-top:1.5rem;">
+      <span class="pill">Species at Risk</span>
+      <span class="pill">GBIF Open Data</span>
+      <span class="pill">R / Shiny</span>
+      <span class="pill">Observer-bias Correction</span>
+      <span class="pill">Pollinator Conservation</span>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container" style="max-width:780px;">
+
+    <!-- THE PROBLEM -->
+    <div class="fade-up" style="margin-bottom:3rem;">
+      <h2>The Problem</h2>
+      <p>
+        Ontario is home to six bumble bee species listed under Canada's <em>Species at
+        Risk Act</em> or provincially at risk, including the Yellow-banded bumble bee
+        (<em>Bombus terricola</em>) and the Rusty-patched bumble bee (<em>B. affinis</em>),
+        once one of the most common species in eastern North America. <em>B. affinis</em>
+        has virtually disappeared — only one GBIF occurrence record exists for Ontario,
+        and none since 2015.
+      </p>
+      <p>
+        Conservation teams and land managers need to know: where have these species
+        been recorded, where are surveys most needed, and how have their proportions
+        changed relative to common species over time? The challenge is that community
+        science occurrence data (iNaturalist, GBIF) is heavily observer-biased —
+        populated southern Ontario generates vastly more records than the boreal north,
+        making raw count trends almost meaningless.
+      </p>
+    </div>
+
+    <!-- THE DATA CHALLENGE -->
+    <div class="fade-up" style="margin-bottom:3rem;">
+      <h2>Why Raw Trends Mislead</h2>
+      <p>
+        A naive look at <em>B. terricola</em> GBIF records shows the centroid of
+        observations drifting <strong>south</strong> over time — the opposite of what
+        a genuine northern range contraction would look like. The explanation is simple:
+        iNaturalist adoption grew fastest in southern urban centres. More observers in
+        the south means more records from the south, even if the species is holding
+        steady or declining there.
+      </p>
+      <p>
+        Using raw counts as a trend indicator would produce a confidently wrong result.
+        This is a common pitfall in community-science data analysis, and getting it
+        wrong in a Species at Risk context has real consequences for survey prioritization
+        and recovery planning.
+      </p>
+    </div>
+
+    <!-- THE APPROACH -->
+    <div class="fade-up" style="margin-bottom:3rem;">
+      <h2>The Approach: Honest Open-Data Analysis</h2>
+      <p>
+        Rather than trend raw counts, the tool uses two bias-resistant metrics:
+      </p>
+      <ul style="margin:1rem 0 1rem 1.5rem; line-height:2;">
+        <li>
+          <strong>Proportion-of-records decline</strong> — each at-risk species is
+          expressed as a share of all Ontario <em>Bombus</em> records in the same
+          period, using exact yearly totals from GBIF facet queries. If the at-risk
+          share is falling, that's a real signal even if absolute observer effort is
+          growing.
+        </li>
+        <li>
+          <strong>Same-period same-observer baseline</strong> — <em>B. terricola</em>
+          records are compared against <em>B. impatiens</em> (the most common Ontario
+          bumble bee) within identical time windows, isolating genuine relative change
+          from effort inflation.
+        </li>
+        <li>
+          <strong>0.5° survey-effort grid</strong> — a spatial grid flags cells with
+          few or no recent at-risk records, highlighting where targeted surveys would
+          add the most conservation value.
+        </li>
+      </ul>
+      <p>
+        The result: <em>B. terricola</em> sits roughly 206 km north of <em>B. impatiens</em>
+        in the same-period comparison, consistent with its documented boreal affinity.
+        Its proportion of Ontario records has declined meaningfully over the past two
+        decades. <em>B. affinis</em> is functionally absent.
+      </p>
+    </div>
+
+    <!-- THE TOOL -->
+    <div class="fade-up" style="margin-bottom:3rem;">
+      <h2>The Tool</h2>
+      <p>
+        The dashboard is built in R/Shiny using the <code>rgbif</code> package for live
+        data pulls, <code>leaflet</code> for interactive mapping, and <code>plotly</code>
+        for time-series charts. It includes:
+      </p>
+      <ul style="margin:1rem 0 1rem 1.5rem; line-height:2;">
+        <li>Species occurrence map with Okabe-Ito colourblind-safe palette</li>
+        <li>Proportion-of-records trend chart per species</li>
+        <li>Northern range centroid comparison (at-risk vs. <em>B. impatiens</em>)</li>
+        <li>Survey-effort gap map highlighting under-surveyed grid cells</li>
+        <li>Early vs. recent toggle to compare historical and modern distributions</li>
+      </ul>
+      <p>
+        Data is cached on load to keep the app responsive without hammering the GBIF API.
+        The full source is publicly available on GitHub.
+      </p>
+      <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="work.html" class="btn btn-dark">View live dashboard →</a>
+        <a href="intake.html" class="btn btn-ghost">Start a similar project</a>
+      </div>
+    </div>
+
+    <!-- RELEVANCE -->
+    <div class="fade-up" style="margin-bottom:3rem;">
+      <h2>Who This Kind of Analysis Is For</h2>
+      <p>
+        This project demonstrates the kind of work I do for conservation organizations,
+        environmental consultants, and government teams working on species at risk,
+        biodiversity monitoring, and survey design in Ontario and across Canada:
+      </p>
+      <ul style="margin:1rem 0 1rem 1.5rem; line-height:2;">
+        <li>Species at risk screening and occurrence analysis</li>
+        <li>Observer-bias-aware trend analysis from community science datasets</li>
+        <li>Spatial prioritization of survey effort</li>
+        <li>Interactive dashboards for non-technical stakeholders</li>
+        <li>Reproducible, defensible methods for regulatory contexts</li>
+      </ul>
+      <p>
+        If you're working on a bumble bee recovery program, a SARA-triggered screening,
+        or a broader pollinator monitoring initiative and need analytical support,
+        I'd be glad to talk.
+      </p>
+      <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-dark">Get in touch →</a>
+        <a href="services.html" class="btn btn-ghost">See all services</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Quadrat Studio · by Susan Frye, PhD Candidate</p>
+    <a href="mailto:susan@quadratstudio.ca">susan@quadratstudio.ca</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

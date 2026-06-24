@@ -76,6 +76,9 @@
     details.embed-toggle > summary::before { content: '▸'; transition: transform 0.2s; }
     details.embed-toggle[open] > summary::before { transform: rotate(90deg); }
   </style>
+  <!-- GA4: replace GA_MEASUREMENT_ID with your real ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
 </head>
 <body>
 
@@ -453,6 +456,7 @@
               <span class="tag">effort-robust</span>
               <span class="tag">Real data</span>
             </div>
+            <a class="proj-link" href="case-study-bumblebee.html">Read case study →</a>
             <a class="proj-link" data-app="bombus" href="#" target="_blank" rel="noopener">View live app ↗</a>
           </div>
           <details class="embed-toggle"><summary>Preview embedded app</summary>
