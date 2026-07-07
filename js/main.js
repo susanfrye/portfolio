@@ -1,3 +1,24 @@
+// ── Promo / announcement bar (site-wide, dismissible) ─────
+// Launch offer tied to the ASI intake deadline. Update or remove the code
+// and the "through July 29" text when the campaign ends. Set STORAGE key to a
+// new value (e.g. bump the date) to re-show the bar to people who dismissed it.
+(function () {
+  const STORAGE = 'qs_promo_asi2026_dismissed';
+  try { if (localStorage.getItem(STORAGE) === '1') return; } catch (e) {}
+  const bar = document.createElement('div');
+  bar.className = 'promo-bar';
+  bar.innerHTML =
+    '⚡ <strong>Launch offer</strong> — save 20% on the Farm Grant Toolkit &amp; Course through July 29. ' +
+    'Use code <code>ASI2026</code> at checkout. ' +
+    '<a href="/index.html#products">Shop now →</a>' +
+    '<button class="promo-close" aria-label="Dismiss offer">&times;</button>';
+  document.body.insertBefore(bar, document.body.firstChild);
+  bar.querySelector('.promo-close').addEventListener('click', () => {
+    bar.remove();
+    try { localStorage.setItem(STORAGE, '1'); } catch (e) {}
+  });
+})();
+
 // ── Mobile nav toggle ─────────────────────────────────────
 const toggle   = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
