@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Your Screening — Species-at-Risk & Habitat | Quadrat Studio</title>
+  <meta name="description" content="Site intake form for your Quadrat Studio Species-at-Risk & Habitat Screening report." />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- GA4: replace G-M9VYFZH90K with your real ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M9VYFZH90K"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-M9VYFZH90K');</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Quadrat Studio home">Quadrat&nbsp;Studio<span class="logo-dot"></span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#products">Tools &amp; Courses</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Species-at-Risk &amp; Habitat Screening</span>
+    <h1>Start your screening</h1>
+    <p class="lead">
+      Thanks for your order. Complete the fields below and we'll prepare your preliminary
+      desktop screening report — typically within a few business days. Estimates are fine
+      where exact figures are unknown; just note anything uncertain.
+    </p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+
+    <!-- SAR screening intake — Formspree (form xjgddqoy → susan@quadratstudio.ca).
+         Delivered to buyers via the Gumroad post-purchase content / receipt link.
+         Responses email to you; you run the Fill Prompt, review, and send the report. -->
+    <form class="contact-form intake-form fade-up" action="https://formspree.io/f/xjgddqoy" method="POST">
+      <input type="hidden" name="_subject" value="New SAR Screening order — site intake submitted" />
+      <input type="hidden" name="product" value="Species-at-Risk & Habitat Screening" />
+      <!-- honeypot: hidden from people, catches bots -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <fieldset class="form-section">
+        <legend>Order verification</legend>
+        <div class="form-row">
+          <label class="field">Email used at purchase
+            <input type="email" name="purchase_email" placeholder="you@example.com" required />
+          </label>
+          <label class="field">Gumroad order number <span class="field-hint">from your receipt</span>
+            <input type="text" name="order_number" placeholder="e.g. #ABC12345" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>1 · Site identification</legend>
+        <div class="form-row">
+          <label class="field">Site / project name
+            <input type="text" name="site_name" placeholder="e.g. Maple Ridge parcel" required />
+          </label>
+          <label class="field">Municipality / township
+            <input type="text" name="municipality" placeholder="e.g. Township of Cavan Monaghan" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="field">County / region &amp; province
+            <input type="text" name="region" placeholder="e.g. Peterborough County, ON" />
+          </label>
+          <label class="field">Parcel size <span class="field-hint">include units — ha or acres</span>
+            <input type="text" name="parcel_size" placeholder="e.g. 12 ha" />
+          </label>
+        </div>
+        <label class="field">Coordinates (lat, long)
+          <span class="field-hint">Decimal degrees preferred, e.g. 44.2312, -78.4501. A dropped pin or address also works.</span>
+          <input type="text" name="coordinates" placeholder="e.g. 44.2312, -78.4501" />
+        </label>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>2 · Land use</legend>
+        <label class="field">Current land use
+          <span class="field-hint">e.g. active cropland, pasture, fallow field, rural residential, woodlot.</span>
+          <input type="text" name="current_land_use" placeholder="e.g. fallow field with hedgerows" required />
+        </label>
+        <label class="field">Adjacent land uses
+          <span class="field-hint">What surrounds the site — farms, roads, subdivision, forest, river, etc.</span>
+          <textarea name="adjacent_land_use" rows="2" placeholder="e.g. cropland to the north, a woodlot and creek to the east, road to the south"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>3 · Visible habitat features</legend>
+        <span class="field">Check any features on or immediately next to the site. <span class="field-hint">Add notes below.</span></span>
+        <div class="checkbox-grid">
+          <label class="check"><input type="checkbox" name="habitat" value="Wetland / marsh" /> Wetland / marsh</label>
+          <label class="check"><input type="checkbox" name="habitat" value="Woodland / forest" /> Woodland / forest</label>
+          <label class="check"><input type="checkbox" name="habitat" value="Grassland / meadow" /> Grassland / meadow</label>
+          <label class="check"><input type="checkbox" name="habitat" value="Watercourse / pond / lake" /> Watercourse / pond / lake</label>
+          <label class="check"><input type="checkbox" name="habitat" value="None obvious" /> None obvious</label>
+          <label class="check"><input type="checkbox" name="habitat" value="Unsure" /> Unsure</label>
+        </div>
+        <label class="field">Notes on habitat features
+          <span class="field-hint">Standing water, treed hedgerows, ditches, sandy/bare ground, rock outcrops, old buildings/barns, etc.</span>
+          <textarea name="habitat_notes" rows="2" placeholder="e.g. old barn on the property, ditch along the road, treed fencerow"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>4 · Proposed activity</legend>
+        <label class="field">Proposed activity / project
+          <span class="field-hint">e.g. new barn, tile drainage, solar array, subdivision, land clearing, trail, restoration planting.</span>
+          <input type="text" name="proposed_activity" placeholder="e.g. tile drainage and a new equipment barn" required />
+        </label>
+        <label class="field">Anticipated timing <span class="field-hint">season / year, if known</span>
+          <input type="text" name="timing" placeholder="e.g. Spring 2027" />
+        </label>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>5 · Report details</legend>
+        <div class="form-row">
+          <label class="field">Prepared for (name on report)
+            <input type="text" name="prepared_for" placeholder="e.g. Jane Doe / Doe Farms Ltd." required />
+          </label>
+          <label class="field">Best contact (email / phone)
+            <input type="text" name="contact" placeholder="you@example.com" required />
+          </label>
+        </div>
+        <label class="check" style="margin-top:0.5rem;">
+          <input type="checkbox" name="rush" value="Rush turnaround requested (+50%)" /> I'd like rush turnaround (we'll follow up about the +50% fee)
+        </label>
+      </fieldset>
+
+      <button type="submit" class="btn btn-dark">Submit site details →</button>
+      <p class="form-fineprint">
+        The screening we return is a preliminary desktop review based on the details you
+        provide and publicly available data. It is not a field assessment, species survey,
+        or regulatory approval. We'll email your report once it's prepared and reviewed.
+      </p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Quadrat Studio · by Susan Frye</p>
+    <a href="mailto:susan@quadratstudio.ca">susan@quadratstudio.ca</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
