@@ -131,8 +131,19 @@
           <li>Printable one-page summary</li>
           <li>Application checklist</li>
         </ul>
-        <!-- TODO: replace href="#" with your real checkout link (Gumroad / Stripe / Lemon Squeezy). -->
-        <a href="#" class="btn btn-dark" data-buy="toolkit">Buy now — $99</a>
+        <!-- Checkout isn't live yet — capture interest via Formspree (form xjgddqoy).
+             _subject / lead_source identify which product; _next → thank-you page.
+             Re-enable a real "Buy now" link here once checkout exists. -->
+        <div class="product-cta" style="margin-top:auto;">
+          <p class="optin-fine" style="margin:0 0 0.75rem;">Available soon — join the waitlist to be first in line.</p>
+          <form class="optin-form" action="https://formspree.io/f/xjgddqoy" method="POST">
+            <input type="hidden" name="_subject" value="New waitlist signup — Farm Grant Toolkit" />
+            <input type="hidden" name="lead_source" value="Home page — Farm Grant Toolkit waitlist" />
+            <input type="hidden" name="_next" value="https://quadratstudio.ca/thankyou.html" />
+            <input type="email" name="email" placeholder="you@farm.ca" aria-label="Your email" required />
+            <button type="submit" class="btn btn-dark">Join the waitlist</button>
+          </form>
+        </div>
       </div>
 
       <!-- Product 2 — Course -->
@@ -154,8 +165,19 @@
           <li>Proposal &amp; budget templates</li>
           <li>Bundle with the Toolkit and save</li>
         </ul>
-        <!-- TODO: replace href="#" with your real checkout link (Gumroad / Stripe / Lemon Squeezy). -->
-        <a href="#" class="btn btn-dark" data-buy="course">Enroll — $149 (or $299 with Toolkit)</a>
+        <!-- Checkout isn't live yet — capture interest via Formspree (form xjgddqoy).
+             _subject / lead_source identify which product; _next → thank-you page.
+             Re-enable a real "Enroll" link here once checkout exists. -->
+        <div class="product-cta" style="margin-top:auto;">
+          <p class="optin-fine" style="margin:0 0 0.75rem;">Available soon — join the waitlist to be first in line.</p>
+          <form class="optin-form" action="https://formspree.io/f/xjgddqoy" method="POST">
+            <input type="hidden" name="_subject" value="New waitlist signup — Fund Your Farm Course" />
+            <input type="hidden" name="lead_source" value="Home page — Fund Your Farm Course waitlist" />
+            <input type="hidden" name="_next" value="https://quadratstudio.ca/thankyou.html" />
+            <input type="email" name="email" placeholder="you@farm.ca" aria-label="Your email" required />
+            <button type="submit" class="btn btn-dark">Join the waitlist</button>
+          </form>
+        </div>
       </div>
 
     </div>

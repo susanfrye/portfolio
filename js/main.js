@@ -1,7 +1,10 @@
 // ── Promo / announcement bar (site-wide, dismissible) ─────
-// Launch offer tied to the ASI intake deadline. Update or remove the code
-// and the "through July 29" text when the campaign ends. Set STORAGE key to a
-// new value (e.g. bump the date) to re-show the bar to people who dismissed it.
+// DISABLED 2026-07-13: the ASI2026 "20% off at checkout" offer advertised a
+// checkout that doesn't exist yet, so the bar is turned off to keep the site
+// honest. Re-enable by uncommenting the block below once checkout is live
+// (and refresh the code / "through July 29" text). Set STORAGE to a new value
+// to re-show the bar to people who dismissed the old one.
+/*
 (function () {
   const STORAGE = 'qs_promo_asi2026_dismissed';
   try { if (localStorage.getItem(STORAGE) === '1') return; } catch (e) {}
@@ -18,6 +21,7 @@
     try { localStorage.setItem(STORAGE, '1'); } catch (e) {}
   });
 })();
+*/
 
 // ── Mobile nav toggle ─────────────────────────────────────
 const toggle   = document.querySelector('.nav-toggle');
